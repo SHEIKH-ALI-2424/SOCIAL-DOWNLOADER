@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Downloader</title>
+  
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smoother Drawer with Animation</title>
+  <link rel="stylesheet" href="styles.css">
+<style>
+  body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.menu-toggle {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 50px; /* Thoda left shift */
+}
+
+.menu-toggle span {
+  display: block;
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* Drawer styling */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 80px 20px 20px 20px;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  transition: right 0.5s ease-in-out;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.drawer-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeInSlide 0.6s forwards;
+  animation-delay: 0.2s;
+}
+
+.drawer-nav a:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.drawer-nav .icon {
+  margin-right: 12px;
+  font-size: 26px;
+}
+
+/* Hamburger to Cross Animation */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Drawer content fade-in animation */
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+</style><style>
+        .credit-footer {
+            background: #111;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px #00bcd4;
+            box-shadow: 0 -2px 10px rgba(0,255,255,0.2);
+            font-size: 16px;
+            margin-top: 40px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            z-index: 1000;
+        }
+        .credit-footer strong {
+            color: #00bcd4;
+        }
+        .credit-footer a {
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .credit-footer .whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        .credit-footer .telegram {
+            background: #0088cc;
+            color: white;
+        }
+        .credit-footer a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,255,255,0.4);
+        }
+    </style></head>
+    <body>
+
+<header class="header">
+  <div class="image">
+    <a href="https://api.whatsapp.com/send?phone=923143702270&text=HI+𒁂𓄂❥.𝑺𝑯𝑬𝑰𝑲𝑯 𝑨𝑳𝑰 🔥༽༼࿐ ♡𒁂"><img src="https://i.imghippo.com/files/nOA1906sG.jpg" height ="90" alt="SHEIKH ALI"></a>
+  </div>
+  <div class="menu-toggle" id="menu-toggle" onclick="toggleDrawer()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<div id="drawer" class="drawer">
+  <br>
+  <nav class="drawer-nav">
+    <a href="https://sheikh-ali-database.vercel.app/" class="fade-in"><span class="icon">🏠</span> нσмє</a>
+    <a href="https://api.whatsapp.com/send?phone=923143702270&text=HI+𒁂𓄂❥.𝑺𝑯𝑬𝑰𝑲𝑯 𝑨𝑳𝑰 🔥༽༼࿐ ♡𒁂"class="fade-in"><span class="icon">✉️</span> ¢σηтα¢т υѕ</a>
+    <a href="/index.html/about.html" class="fade-in"><span class="icon">♻️</span> αвσυт υѕ</a>
+    <a href="/index.html/tiktok.html" class="fade-in"><span class="icon">️🎥</span> тιктσк νι∂</a>
+    <a href="/index.html/download.html" class="fade-in"><span class="icon">️⬇️</span> ∂σωηℓσα∂ αρк </a>
+  </nav>
+</div>
+
+<script>
+  let isOpen = false;
+
+function toggleDrawer() {
+  const drawer = document.getElementById('drawer');
+  const menuToggle = document.getElementById('menu-toggle');
+
+  if (isOpen) {
+    drawer.classList.remove('open');
+    menuToggle.classList.remove('open');
+    isOpen = false;
+  } else {
+    drawer.classList.add('open');
+    menuToggle.classList.add('open');
+    isOpen = true;
+  }
+}
+
+</script>
+
+
+
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;font-family:'Segoe UI',sans-serif;background:black;color:white;overflow:hidden}
+    canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0}
+    .container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:rgba(0,0,0,.6);border-radius:20px;padding:25px;width:90%;max-width:400px;box-shadow:0 0 30px #00f2ff;text-align:center}
+    h1{margin-bottom:20px;color:#00f2ff}
+    input{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:none;font-size:16px;background:#111;color:white}
+    button{background:#00f2ff;color:black;font-weight:bold;padding:12px;width:100%;border-radius:10px;border:none;cursor:pointer;font-size:16px;transition:.3s}
+    button:hover{background:#00c2d4}
+    #result{margin-top:20px;color:white;font-size:15px}
+    .download-btn{background:#00f2ff;color:black;padding:12px 30px;border-radius:10px;text-decoration:none;display:inline-block;margin-top:15px;font-size:16px;font-weight:bold;transition:.3s}
+    .download-btn:hover{background:#00c2d4}
+    .whatsapp-link{display:inline-block;margin-top:20px;background:#25d366;color:black;padding:10px 20px;border-radius:25px;text-decoration:none;font-weight:bold;box-shadow:0 0 15px rgba(37,211,102,.7);transition:.3s}
+    .whatsapp-link:hover{background:#1ebe5d}
+  </style>
+
+
+
+<canvas id="matrixCanvas" height="585" width="1280"></canvas>
+
+<div class="container" style="position: relative; top: 325px;"
+  <h1>𝐓𝐢𝐤𝐭𝐨𝐤 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫</h1>
+  <input type="url" id="videoUrl" placeholder="Paste TikTok video URL" required="">
+  <button onclick="downloadVideo()">ԀȏẇṅʟȏѧԀ ṿıԀєȏ</button>
+  <div id="result"> </div>
+  
+  <!-- WhatsApp Channel Button (link set by JS) -->
+  <a id="whatsappChannel" class="whatsapp-link" target="_blank" href="https://whatsapp.com/channel/0029VahpgB7L7UVXkL6oMw1k">ẇһѧṭṡѧƿƿ ċһѧṅṅєʟ</a>
+  <br>
+  
+  <br>
+  <a id="telegramChannel" class="telegram-link" target="_blank" href="https://t.me/+94FrpOJan0plZGQ0" style="background-color: #0088cc; color: #fff; padding: 10px 20px; border-radius: 50px; text-decoration: none;">ṭєʟєɢяѧṃ ċһѧṅṅєʟ</a>
+  </div>
+  <div align="center" class="glowing-text" style="position: relative; top: 200px; font-size: 20px; font-weight: bold; color: cyan; animation: glow 2s infinite;">Pᴏᴡᴇʀᴇᴅ Bʏ 𒁂𓄂❥.𝑺𝑯𝑬𝑰𝑲𝑯 𝑨𝑳𝑰 🔥༽༼࿐ ♡••²⁴⁰²
+</div>
+<style>
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px deeppink, 0 0 10px deeppink, 0 0 15px deeppink;
+    }
+    33% {
+      text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00;
+    }
+    66% {
+      text-shadow: 0 0 5px #0000FF, 0 0 10px #0000FF, 0 0 15px #0000FF;
+    }
+    100% {
+      text-shadow: 0 0 5px #FF0000, 0 0 10px #FF0000, 0 0 15px #FF0000;
+    }
+    133% {
+      text-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+    }
+  }
+</style>
+<script>
+  // Background animation
+  const canvas = document.getElementById("matrixCanvas");
+  const ctx = canvas.getContext("2d");
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  const chars = "01";
+  const fontSize = 16;
+  const columns = canvas.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#00f2ff";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 33);
+
+  // TikTok video download logic
+  async function downloadVideo() {
+    const url = document.getElementById("videoUrl").value;
+    const resultDiv = document.getElementById("result");
+
+    if (!url.includes("tiktok.com")) {
+      resultDiv.innerHTML = "❌ Please enter a valid TikTok URL.";
+      return;
+    }
+
+    resultDiv.innerHTML = "⏳ Fetching video...";
+
+    try {
+      const res = await fetch(`https://tikwm.com/api/?url=${encodeURIComponent(url)}`);
+      const data = await res.json();
+
+      if (data && data.data && data.data.play) {
+        resultDiv.innerHTML = `
+          ✅ Video Ready!<br><br>
+          <a href="${data.data.play}" download target="_blank" class="download-btn">Click here to download</a>
+        `;
+      } else {
+        resultDiv.innerHTML = "❌ Could not fetch video.";
+      }
+    } catch (err) {
+      console.error(err);
+      resultDiv.innerHTML = "❌ Error while fetching video.";
+    }
+  }
+
+  // WhatsApp Channel Link Obfuscation
+  const encodedLink = "aHR0cHM6Ly93aGF0c2FwcC5jb20vY2hhbm5lbC8wMDI5VmFocGdCN0w3VVZYa0w2b013MWs=";
+  const decodedLink = atob(encodedLink);
+  document.getElementById("whatsappChannel").href = decodedLink;
+</script>
+  <!-- Footer Script -->
+<script src="document.addEventListener("DOMContentLoaded", function() {
+    // Create the footer with credit and buttons
+    const footer = document.createElement('div');
+    footer.innerHTML = `
+        <div class="credit-footer">
+            <strong>CODE BY SHEIKH ALI</strong><br><br>
+            <a href="https://whatsapp.com/channel/0029VahpgB7L7UVXkL6oMw1k" target="_blank" class="whatsapp">Join WhatsApp</a>
+            <a href="https://t.me/+94FrpOJan0plZGQ0" target="_blank" class="telegram">Join Telegram</a>
+        </div>
+`;
+
+    // Append it to the body of the page
+    document.body.appendChild(footer);
+
+    // Add CSS dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+.credit - footer {
+    background: #111;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid # 00 bcd4;
+    box - shadow: 0 - 2 px 10 px rgba(0, 255, 255, 0.2);
+    font - size: 16 px;
+    margin - top: 40 px;
+    position: fixed;
+    bottom: 0;
+    width: 100 % ;
+    left: 0;
+    z - index: 1000;
+  }
+  .credit - footer strong {
+    color: #00bcd4;
+        }
+        .credit-footer a {
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .credit-footer .whatsapp {
+            background: # 25 D366;
+    color: white;
+  }
+  .credit - footer.telegram {
+    background: #0088cc;
+            color: white;
+        }
+        .credit-footer a:hover {
+            transform: scale(0.9);
+            box-shadow: 0 4px 8px rgba(0,255,255,0.4);
+        }
+    `;
+    document.head.appendChild(style);
+});"></script>
+    </body>
+</html>
